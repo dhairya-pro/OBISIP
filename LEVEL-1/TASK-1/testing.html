@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hero Slider</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+           background-color: #000000;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #000000;
+            color: white;
+            padding: 10px 20px;
+        }
+
+        .logo {
+           
+            width: 50px;
+            height: 50px;
+            background: url(main.jpg);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-links li {
+            margin: 0 10px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+        }
+
+        .login-button {
+            background-color: #ff6600;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .hero-slider {
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .slide {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+
+        }
+
+        .slide h1 {
+            font-size: 50px;
+            margin: 10px 0;
+        }
+
+        .slide p {
+            font-size: 25px;
+            margin: 10px 0;
+        }
+
+        .book-now-button {
+            background-color: #ff6600;
+            color: white;
+            padding: 15px 30px;
+            font-size: 18px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .image-boxes {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .image-box {
+            margin: 10px;
+        }
+
+        .image-box img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+        }
+        .space{
+         height:33vh;
+        }
+        .space1{
+            height:2vh;
+        }
+        .space2{
+            height: 2vh;
+        }
+        .hero {
+            background-color: #000000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 50px;
+        }
+
+        .hero-text {
+            flex: 1;
+            padding: 10px;
+            color: white;
+        }
+
+        .hero-text h1 {
+            font-size: 36px;
+            margin: 10px 0;
+        }
+
+        .hero-text p {
+            font-size: 18px;
+        }
+
+        .hero-image {
+            flex: 1;
+            text-align: right;
+        }
+        
+     
+
+
+.container-row {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+
+        .container {
+            flex: 1;
+            background-color: #000000;
+            padding: 20px;
+            text-align: center;
+            cursor: pointer;
+            transition: transform 0.3s ease-in-out;
+            position: relative;
+        }
+
+        .container img {
+            width: 100%;
+            height: 90%;
+        }
+
+        .container:hover {
+            transform: translateY(-5px);
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: rgba(0, 0, 0, 0.7);
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .container:hover .overlay {
+            opacity: 1;
+        }
+
+        .overlay h2 {
+            color: white;
+            font-size: 24px;
+            margin: 0;
+        }
+
+        .overlay p {
+            color: #ff6600;
+            margin: 0;
+        }
+        .contact-section {
+  display: flex;
+  width: 100;
+  background: url(lamborghini.jpeg);
+  border-radius: 10px;
+  overflow: hidden;
+ 
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
+}
+
+.quote {
+  flex: 1;
+  padding: 40px;
+  background-color: #000000;
+  color: #fff;
+}
+
+blockquote {
+  font-size: 1.5em;
+  text-align: center;
+}
+
+cite {
+  display: block;
+  margin-top: 20px;
+  font-size: 1.2em;
+}
+
+.contact-form {
+  flex: 2;
+  padding: 40px;
+}
+
+h2 {
+  font-size: 2em;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.form-group {
+  margin: 10px 0;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+  width: 30%;
+  padding: 10px;
+  margin: 5px 0;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.submit-button {
+  background-color: #000000;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.submit-button:hover {
+  background-color: #ffffff;
+}
+.button-85 {
+  padding: 0.6em 2em;
+  border: none;
+  outline: none;
+  color: rgb(255, 255, 255);
+  background: #111;
+  cursor: pointer;
+  position: relative;
+  z-index: 0;
+  border-radius: 10px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button-85:before {
+  content: "";
+  background: linear-gradient(
+    45deg,
+    #ff0000,
+    #ff7300,
+    #fffb00,
+    #48ff00,
+    #00ffd5,
+    #002bff,
+    #7a00ff,
+    #ff00c8,
+    #ff0000
+  );
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  background-size: 400%;
+  z-index: -1;
+  filter: blur(5px);
+  -webkit-filter: blur(5px);
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  animation: glowing-button-85 20s linear infinite;
+  transition: opacity 0.3s ease-in-out;
+  border-radius: 10px;
+}
+
+@keyframes glowing-button-85 {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 400% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
+
+.button-85:after {
+  z-index: -1;
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #222;
+  left: 0;
+  top: 0;
+  border-radius: 10px;
+}
+.question h4 {
+  color: white;
+  margin-top: -20px;
+  padding-bottom: 40px;
+}
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: 375px;
+  background-color: black;
+  margin-top: 10px;
+  flex-wrap: wrap;
+  align-items:center;
+  justify-content:space-around;
+
+}
+
+.footercon {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  min-height: 50px;
+  background-color: transparent;
+}
+
+.footer .flex1 {
+  color:#999;;
+  justify-content:space-around;
+  align-items:flex-start;
+  display: flex;
+  flex-direction:row;
+  flex-wrap:wrap;
+  width:100%;
+  font-size: 17px;
+  min-height: 30px;
+
+}
+
+.footer .flex1 h5 {
+  align-self:flex-start;
+}
+
+.list1 {
+  color: white;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-items: flex-start;
+  align-self: center;
+  justify-content: center;
+  min-height:50px;
+  font-size: 13px;
+  padding: 0px 70px;
+  text-align: left;
+}
+
+.list1 li {
+  font-size: 13px;
+  margin: 7px -10px;
+  list-style-type: none;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-items: center;
+  align-self: flex-start;
+  justify-content: center;
+}
+
+.list1 li a {
+  color: #999;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+li a {
+  font-size: 13px;
+  text-align: center;
+  color: #999;
+}
+
+
+.footertxt {
+  color:white;
+  display:flex;
+  flex-direction:row;
+  align-items:flex-end;
+  justify-content: flex-end;
+}
+
+.end {
+  width:100%;
+  min-height:50px;
+background-color: black;
+justify-content:space-around;
+align-items:flex-start;
+display: flex;
+flex-direction:row;
+flex-wrap:wrap;
+color:#999;
+margin-top:-60px;
+}
+
+.end h2 {
+  display:flex;
+  flex-direction: row;
+font-size:16px;
+}
+
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <div class="logo"></div>
+        <ul class="nav-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Electrical</a></li>
+            <li><a href="#">Diesel</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+        <button class="login-button animate__animated animate__bounce"><a href="login.html">Login</a></button>
+    </div>
+    
+    <div class="hero-slider">
+        <div class="slide" style="background-image: url('main.jpg');">
+            <p class="space"></p>
+
+            <h1>Welcome to Our Paradise</h1>
+            <p>Discover a world of beauty and Luxury with  BMW M5 CS</p>
+            <p class="space1"></p>
+            <button class="book-now-button">Book Now</button>
+            <p class="space2"></p>
+            <div class="image-boxes">
+                <div class="image-box">
+                    <img src="tyre.jpg" alt="Box 1" />
+                </div>
+                <div class="image-box">
+                    <img src="front.jpg" alt="Box 2" />
+                </div>
+                <div class="image-box">
+                    <img src="back.jpg" alt="Box 3" />
+                </div>
+                <div class="image-box">
+                    <img src="grill.jpg" alt="Box 4" />
+                </div>
+            </div>
+        </div>
+
+        <div class="slide" style="background-image: url('m8.jpg');">
+            <p class="space"></p>
+            <h1>Experience Paradise</h1>
+            <p>With the powerful machine M8</p>
+            <p class="space1"></p>
+            <button class="book-now-button">Book Now</button>
+            <p class="space2"></p>
+            <div class="image-boxes">
+                <div class="image-box">
+                    <img src="frontm8.jpg" alt="Box 5" />
+                </div>
+                <div class="image-box">
+                    <img src="intm8.jpg" alt="Box 6" />
+                </div>
+                <div class="image-box">
+                    <img src="tyrem8.jpg" alt="Box 7" />
+                </div>
+                <div class="image-box">
+                    <img src="backm8.jpg" alt="Box 8" />
+                </div>
+            </div>
+        </div>
+
+        <div class="slide" style="background-image: url('X7MAIN.jpg');">
+            <p class="space"></p>
+            <h1>Experience power and Luxury</h1>
+            <p>With the most luxurious and powerful the all new X7</p>
+            <p class="space1"></p>
+            <button class="book-now-button">Book Now</button>
+            <p class="space2"></p>
+            <div class="image-boxes">
+                <div class="image-box">
+                    <img src="FRONTX7.jpg" alt="Box 5" />
+                </div>
+                <div class="image-box">
+                    <img src="INTX7.jpg" alt="Box 6" />
+                </div>
+                <div class="image-box">
+                    <img src="TYREX7.jpg" alt="Box 7" />
+                </div>
+                <div class="image-box">
+                    <img src="BACKX7.jpg" alt="Box 8" />
+                </div>
+            </div>
+        </div>
+    </div>
+    <section class="hero" id="home">
+        <div class="hero-text">
+            <h1>Discover Your Dream Car</h1>
+            <p>Explore our wide range of luxury cars and find your perfect ride today.</p>
+            <button class="login-button animate_animated animate_bounce" id="about">Know more</button>
+        </div>
+        <div class="hero-image">
+            <img src="newcar.jpg" alt="[Your Name]">
+        </div>
+    </section>
+    <section>
+        <h2 style="text-align: center; color: rgb(255, 255, 255);">Recently Added</h2>
+        <div class="container-row">
+            <div class="container">
+                <img src="lamborghini.jpeg" alt="Image 1">
+                <div class="overlay">
+                    <h2>lamborghini huracan evo</h2>
+                    <p>Starting at $50,000</p>
+                </div>
+            </div>
+            <div class="container">
+                <img src="mustang.jpg" alt="Image 2">
+                <div class="overlay">
+                    <h2>Mustang GT</h2>
+                    <p>Starting at $40,000</p>
+                </div>
+            </div>
+            <div class="container">
+                <img src="main.jpg" alt="Image 3">
+                <div class="overlay">
+                    <h2>BMW M5 CS</h2>
+                    <p>Starting at $45,000</p>
+                </div>
+            </div>
+        </div>
+        </section>
+        <section>
+            <div class="contact-section">
+                
+                <div class="contact-form">
+                  <h2>Contact Us</h2>
+                  <form>
+                    <div class="form-group">
+                      <input type="text" id="first-name" placeholder="First Name" required>
+                      <input type="text" id="last-name" placeholder="Last Name" required>
+                    </div>
+                    <div class="form-group">
+                      <input type="email" id="email" placeholder="Email" required>
+                    </div>
+                    <div class="form-group">
+                      <textarea id="message" placeholder="Your Message" required></textarea>
+                    </div>
+                    <button type="submit" class="button-85" role="button">Submit</button>
+                  </form>
+                </div>
+              </div>
+        </section>
+        <div class="footer">
+
+
+            <div class="footercon">
+              <div class="flex1">
+                                        <h5>For any  query? call 8849637157
+                </h5>
+                <h5>
+</h5>
+              </div>
+              
+   <ul class="list1">
+     
+            <li><a href="">FAQ</a></li>
+            <li><a href="">Investor Relation</a></li>
+            <li><a href="">Login</a></li>
+
+            <li><a href="">Corporate Information</a></li>
+            <li><a href="">DJ MOTORS</a></li>
+            </ul>
+            <ul class="list1">
+            <li><a href="">Home</a></li>
+                <li><a href="">Services</a></li>
+                <li><a href="">Terms of Use</a></li>
+                <li><a href="">Contact Us</a></li>
+                <li><a href="">#</a></li>
+                </ul>
+                <ul class="list1">
+                    <li><a href="">Account</a></li>
+                    <li><a href="">Redeem Gift Cards</a></li>
+                    <li><a href="">Privacy</a></li>
+                    <li><a href="">Specifications</a></li>
+                    <li><a href="">#</a></li>
+
+                    </ul>
+                    <ul class="list1">
+                        <li><a href="">Buy new car</a></li>
+                        <li><a href="">Buy used cars</a></li>
+                        <li><a href="">Sell your car</a></li>
+                        <li><a href="">Legal Notices</a></li>
+                        <li><a href="">#</a></li>
+
+                        </ul>
+                     
+        </div>
+
+      </div>
+      <div class="end">
+<h2 style="text-align: center;">
+DJ MOTORS INDIA
+</h2> 
+<h2>
+</h2>                    </div>
+    <script>
+        const slides = document.querySelectorAll('.slide');
+        let currentSlide = 0;
+
+        function showSlide(slideIndex) {
+            if (slideIndex < 0) {
+                currentSlide = slides.length - 1;
+            } else if (slideIndex >= slides.length) {
+                currentSlide = 0;
+            }
+
+            slides.forEach((slide, index) => {
+                slide.style.display = index === currentSlide ? 'block' : 'none';
+            });
+        }
+
+        showSlide(currentSlide);
+
+        function nextSlide() {
+            currentSlide++;
+            showSlide(currentSlide);
+        }
+
+        function prevSlide() {
+            currentSlide--;
+            showSlide(currentSlide);
+        }
+
+        setInterval(nextSlide, 4000); // Change slide every 5 seconds
+    </script>
+</body>
+</html>
