@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            display: flex;
+            background-color: #fff;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .left {
+            flex: 1;
+            padding: 40px;
+            text-align: center;
+            background: linear-gradient(to bottom, #000000, #000000);
+            color: white;
+        }
+
+        .left h1 {
+            font-size: 2em;
+        }
+
+        .left p {
+            font-size: 1.2em;
+        }
+
+        .right {
+            flex: 1;
+            padding: 40px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: 600;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .login-button {
+            width: 100%;
+            background-color: #000000;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .login-button:hover {
+            background-color: #45A049;
+        }
+
+        .signup-link {
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="left">
+            <h1>For more Information</h1>
+            <p>Please log in to your account</p>
+        </div>
+        <div class="right">
+            <form id="login-form">
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <button type="submit" class="login-button">Login</button>
+                <div class="signup-link">
+                    Don't have an account? <a href="#">Sign Up</a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        const loginForm = document.getElementById('login-form');
+        loginForm.addEventListener('submit', function (e) {
+            e.preventDefault();
+            // Add your login logic here, e.g., sending data to a server.
+        });
+    </script>
+</body>
+</html>
