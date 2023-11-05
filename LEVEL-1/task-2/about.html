@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="animate.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .video-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            object-fit: cover;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            margin-top: 60px;
+            padding: 20px;
+           
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            position: relative;
+        }
+
+        .profile-picture {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 20px auto;
+            border: 4px solid #626262;
+        }
+
+        .name {
+            font-size: 24px;
+            font-weight: bold;
+            color: #000000;
+        }
+
+        .details {
+            margin-top: 20px;
+        }
+
+        .detail-item {
+            margin: 10px 0;
+        }
+
+        .detail-label {
+            font-weight: bold;
+            color: #000000;
+        }
+
+        .email {
+            color: #000000;
+        }
+
+        .qualities {
+            margin-top: 20px;
+        }
+
+        .qualities ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .qualities li {
+            display: inline-block;
+            margin: 5px;
+            padding: 5px 10px;
+            background-color: #3498db;
+            color: #fff;
+            border-radius: 20px;
+        }
+
+        .hobbies {
+            margin-top: 20px;
+        }
+
+        .hobbies .hobby {
+            background-color: #f39c12;
+            color: #fff;
+            padding: 5px 10px;
+            border-radius: 20px;
+            margin: 5px;
+            display: inline-block;
+        }
+
+        .about-me {
+            margin-top: 30px;
+        }
+
+        .about-me p {
+            font-size: 16px;
+            color: #000000;
+        }
+    </style>
+    <title>About Me</title>
+</head>
+<body>
+    <video class="video-background" autoplay muted loop>
+        <source src="production_id_4562023 (720p).mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    <div class="container">
+        <img class="profile-picture" src="dhairya1about.jpg" alt="Your Name">
+        <div class="name">Dhairya Shah</div>
+        <div class="details">
+            <div class="detail-item">
+                <span class="detail-label">Age:</span> 20
+            </div>
+            <div class="detail-item">
+                <span class="detail-label">Email:</span> <a class="email" href="mailto:youremail@example.com">shahdhairya069@gmail.com</a>
+            </div>
+
+            <div class="detail-item">
+                <span class="detail-label">College:</span> Devang Patel Institute of technology and Advance Research
+            </div>
+        </div>
+        <div class="qualities">
+            <div class="detail-label">Qualities:</div>
+            <ul>
+                <li>Team Work</li>
+                <li>Creative</li>
+                <li>Reliable</li>
+            </ul>
+        </div>
+        <div class="hobbies">
+            <div class="detail-label">Hobbies:</div>
+            <div class="hobby">Traveling</div>
+            <div class="hobby">Problem solving</div>
+            <div class="hobby">photography</div>
+        </div>
+        <div class="about-me">
+            <div class="detail-label">About Me:</div>
+            <p>
+                I have a genuine passion for problem-solving, which fuels my enthusiasm for learning new things. My aspirations revolve around becoming a full stack web developer and an Android app developer. This journey is driven by a thirst for knowledge and a desire to create applications that make a meaningful impact on people's lives. Whether it's designing user-friendly interfaces, optimizing server-side code, or developing intuitive mobile apps, I'm eager to embrace every aspect of development. With a commitment to continuous learning and a strong dedication to honing my skills, I am excited to embark on a rewarding career in software development where I can bring my problem-solving abilities to the forefront and contribute to the ever-evolving world of technology.
+            </p>
+        </div>
+    </div>
+</body>
+</html>
