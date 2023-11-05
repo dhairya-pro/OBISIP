@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <title>TEMPERATURE CONVERTER</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #d1d69a;
+            justify-content: space-between;
+            align-items:center;
+        }
+
+        .container {
+            text-align: center;
+            background-color: rgb(171, 215, 176);
+            box-shadow: 0px 0px 10px 0px rgb(86, 86, 86);
+            max-width: 400px auto;
+            padding: 16px;
+            margin: 10px;
+            margin-top: 100px;
+            border-radius: 16px;
+            align-items: center;
+        }
+
+        #submit:hover {
+            background-color: rgb(224, 181, 181);
+        }
+        #dd {
+            text-align: center;
+            color: rgb(75, 75, 75);
+        }
+
+        #result {
+            font-size: 27px;
+        }
+
+        #temp_diff, #selection {
+            width: 120px;
+            height: 34px;
+            border-radius: 5px;
+            margin: 12px;
+            font-size: 18px;
+            font-weight: 500;
+            border: none;
+            outline: none;
+        }
+        #temp1{
+            text-align: center;
+        }
+        #temp{
+         
+            border-radius: 5px;
+            border: none;
+            outline: none;
+        }
+
+        #submit {
+            width: 100px;
+            border-radius: 5px;
+            margin: 30px 0 20px 0;
+            font-size: 18px;
+            background-color: rgb(255, 149, 0);
+            padding: 5px;
+            transition: all 0.5s ease;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="dd">TEMPERATURE CONVERTER</h1>
+    <div class="container">
+        <form id="calctemp" onsubmit="calculatetemp(); return false">
+            <label for="temp" id="temp1">ENTER THE TEMPERATURE</label>
+            <br>
+            <br>
+            <input type="number" name="temp" id="temp" value="0">
+            <br>
+            <br>
+
+            <label for="convert">FROM :</label>
+            <select name="temp_diff" id="temp_diff">
+                <option value="cel">&#176;Celsius</option>
+                <option value="fah">&#176;Fahrenheit</option>
+                <option value="kel">&#176;Kelvin</option>
+            </select>
+            <br>
+            <br>
+            <label for="convert">TO    :</label>
+            <select name="selection" id="selection">
+                <option value="cel1">&#176;Celsius</option>
+                <option value="fah1">&#176;Fahrenheit</option>
+                <option value="kel1">&#176;Kelvin</option>
+            </select>
+            <br>
+            <br>
+            <input type="submit" name="temp" id="submit">
+            <br>
+            <br>
+            <span id="result"></span>
+        </form>
+    </div>
+    <script>
+        const calculatetemp = () => {
+            const inputTemp = parseFloat(document.getElementById('temp').value);
+            const tempDiff = document.getElementById('temp_diff').value;
+            const selection = document.getElementById('selection').value;
+
+            // Function to convert Celsius to other units
+            const celToOther = (temp, unit) => {
+                switch (unit) {
+                    case 'fah1':
+                        return ((temp * 9 / 5) + 32).toFixed(1) + "&#176; Fahrenheit";
+                    case 'kel1':
+                        return (temp + 273.15).toFixed(1) + "&#176; Kelvin";
+                    default:
+                        return temp + "&#176; Celsius";
+                }
+            }
+
+            // Function to convert Fahrenheit to other units
+            const fahToOther = (temp, unit) => {
+                switch (unit) {
+                    case 'cel1':
+                        return ((temp - 32) * 5 / 9).toFixed(1) + "&#176; Celsius";
+                    case 'kel1':
+                        return (((temp - 32) * 5 / 9 + 273.15).toFixed(1) + "&#176; Kelvin");
+                    default:
+                        return temp + "&#176; Fahrenheit";
+                }
+            }
+
+            // Function to convert Kelvin to other units
+            const kelToOther = (temp, unit) => {
+                switch (unit) {
+                    case 'cel1':
+                        return (temp - 273.15).toFixed(1) + "&#176; Celsius";
+                    case 'fah1':
+                        return (((temp - 273.15) * 9 / 5 + 32).toFixed(1) + "&#176; Fahrenheit");
+                    default:
+                        return temp + "&#176; Kelvin";
+                }
+            }
+
+            let result = '';
+
+            if (tempDiff === 'cel') {
+                result = celToOther(inputTemp, selection);
+            } else if (tempDiff === 'fah') {
+                result = fahToOther(inputTemp, selection);
+            } else if (tempDiff === 'kel') {
+                result = kelToOther(inputTemp, selection);
+            }
+
+            document.getElementById("result").innerHTML = result;
+        }
+    </script>
+</body>
+</html>
